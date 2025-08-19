@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Timetable</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f7fc; text-align: center; }
+        nav { background: #2b6777; padding: 10px; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        .container { background: white; padding: 20px; margin: 20px auto; width: 60%; border-radius: 10px; }
+        button { background: #2b6777; color: white; padding: 10px; border: none; border-radius: 5px; }
+        input, select { padding: 8px; width: 90%; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <nav>
+        {% if user.is_authenticated %}
+            <a href="{% url 'class_list' %}">Classes</a>
+            <a href="{% url 'add_class' %}">Add Class</a>
+            <a href="{% url 'add_teacher' %}">Add Teacher</a>
+            <a href="{% url 'add_period' %}">Add Period</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'register' %}">Register</a>
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

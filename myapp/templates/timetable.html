@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Timetable for {{ class.name }}</h2>
+<table border="1" style="margin:auto;">
+<tr><th>Day</th><th>Teacher</th><th>Start</th><th>End</th></tr>
+{% for p in periods %}
+<tr>
+    <td>{{ p.day }}</td>
+    <td>{{ p.teacher }}</td>
+    <td>{{ p.start_time }}</td>
+    <td>{{ p.end_time }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
