@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'timetable_project',
         'USER' : 'root',
-        'PASSWORD' : 'naveen9840',
+        'PASSWORD' : '1234',
         'HOST' : 'localhost',
         'PORT' : '3306',
     }
